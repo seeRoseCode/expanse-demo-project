@@ -1,4 +1,4 @@
-Expanse, a tech company in Atlanta, Ga, sponsored one of Technologists Coding While Black event in which the attendees were offered the opportunity to tackle a coding challenge.
+Expanse, a tech company in Atlanta, Ga, sponsored one of Technologists of Color's Coding While Black events in which the attendees were offered the opportunity to tackle a coding challenge.
 
 The attendees were given one hour to take the data provided in a csv file and create a site to display that data using any data visualization tool of their choice. There were also no restrictions on which technologies participants decided to use. Due to the time constraints, the organizers provided a thorough template using React and ChartJs completed with hard-coded data, that participants could use.
 
