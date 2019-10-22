@@ -1,68 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Expanse, a tech company in Atlanta, Ga, sponsored one of Technologists Coding While Black event in which the attendees were offered the opportunity to tackle a coding challenge.
 
-## Available Scripts
+The attendees were given one hour to take the data provided in a csv file and create a site to display that data using any data visualization tool of their choice. There were also no restrictions on which technologies participants decided to use. Due to the time constraints, the organizers provided a thorough template using React and ChartJs completed with hard-coded data, that participants could use.
 
-In the project directory, you can run:
+I opted to take this route and attempted to replace the hard-coded with data from the csv file. I created a new React app (this one) and pulled 5 components as well as the code from the info.js file to serve as my skeleton. I imported the csv file and parsed it using PapaParse. I then sorted that data and assigned it to a state object held in app.js and passed it down as props to the chart components. Demo videos of every step in my process can be found at the youtube links below.
 
-### `npm start`
+PART 1 - https://youtu.be/TOi4yf7QX1c
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+PART 2 - https://youtu.be/aZjWTvYsBf8
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+PART 3 - https://www.youtube.com/watch?v=pPKGdZrHHPc
 
-### `npm test`
+PART 4 - https://youtu.be/z7mfPZhB33Q
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+To start, run the following commands from the command Line
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+'npm install'
+'npm start'
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Packages Used:
 
-### `npm run eject`
+chart.js - required for template use
+  a JavaScript library that allows you to draw different types of charts by using the HTML5 canvas element.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+react-chartjs-2 - required for template use
+  wrapper for chart.js
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+react-addons-css-transition-group - required for template use
+  an easy way to perform CSS transitions and animations when a React component enters or leaves the DOM
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+create-react-class - required for template use
+  A drop-in replacement for React.createClass
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+papaparse - required to parse csv file
+  an in-browser CSV parser
