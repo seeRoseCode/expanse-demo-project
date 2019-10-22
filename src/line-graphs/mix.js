@@ -1,3 +1,4 @@
+// Hard coded datat still being used for this chart! 
 import React from 'react';
 import {Line} from 'react-chartjs-2';
 

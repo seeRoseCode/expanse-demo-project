@@ -1,10 +1,5 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
-import Papa from 'papaparse'
-
-
-
-
 
 class LineExample extends React.Component {
 

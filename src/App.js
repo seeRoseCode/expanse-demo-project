@@ -1,24 +1,18 @@
 import React, {Fragment} from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
+import Papa from 'papaparse'
 import LineExample from './line-graphs/line';
 import LineExample2 from './line-graphs/line2';
 import BarExample from './line-graphs/bar';
 import HorizontalBarExample from './line-graphs/horizontalbar';
 import MixExample from './line-graphs/mix';
 
-import Papa from 'papaparse'
-
-import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
-
 //original class name was "ChartJsLinesBars" switched to "App for simplicity"
 export default class App extends React.Component {
-    // state = {
-    //   data: []
-    //   //Name_of_Covered_Entity: "", Individuals_Affected: int
-    // }
-
 
     componentDidMount(){
+      //import and parse csv file. On completion invoke updateData function
       let csvFilePath = require("./data/Cyber Security Breaches.csv")
       Papa.parse(csvFilePath, {
         header: true,
@@ -33,30 +27,13 @@ export default class App extends React.Component {
         labels: [],
         datasets:[
           {
-          label: 'My First dataset',
-          fill: false,
-          lineTension: 0.1,
-          backgroundColor: '#ed0f51',
-          borderColor: '#ed0f51',
-          borderCapStyle: 'round',
-          borderDash: [],
-          borderDashOffset: 0.0,
-          borderJoinStyle: 'miter',
-          pointBorderColor: '#ed0f51',
-          pointBackgroundColor: '#ffffff',
-          pointBorderWidth: 2,
-          pointHoverRadius: 10,
-          pointHoverBackgroundColor: '#ed0f51',
-          pointHoverBorderColor: '#ed0f51',
-          pointHoverBorderWidth: 2,
-          pointRadius: 1,
-          pointHitRadius: 10,
           data: []
           }
         ]
       }
     };
 
+    //takes response from parsed CSV file and inserts desired data into state
       updateData = (result) => {
         let lbl = []
         let dt = []
@@ -70,13 +47,18 @@ export default class App extends React.Component {
         this.setState({data: {labels: lbl, datasets: [{...this.state.data.datasets, data: dt}]}})
       }
 
+      //takes in data from csv file
       sortData = (data) => {
         let sortedAndFormatted = []
+        //sort data based on the number of Individuals_Affected
         data.sort(function(a, b) {
           return a.Individuals_Affected - b.Individuals_Affected;
         });
+        //simplify objects in data to include only Name_of_Covered_Entity and Individuals_Affected
         data.map((n) => sortedAndFormatted.push({ Name_of_Covered_Entity: n.Name_of_Covered_Entity, Individuals_Affected: n.Individuals_Affected}))
+        //return the top 10 companies with highest number of Individuals_Affected
         return sortedAndFormatted.reverse().slice(0, 10)
+
       }
 
 
